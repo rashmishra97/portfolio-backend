@@ -9,7 +9,7 @@ import contactRoutes from "./routes/contactRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import mongoose from "mongoose"
 
-const  url =  "mongodb+srv://portfolio_user:FFMYVEQ%40123rash@cluster0.udzlnas.mongodb.net/?appName=Cluster0"
+const  url =  "mongodb+srv://portfolio_user:FFMYVEQ%40123rash@cluster0.udzlnas.mongodb.net/?appName=Cluster0/portfolio"
 const app = express();
 
 app.use(cors());
