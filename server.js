@@ -31,7 +31,7 @@ connectDB()
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Cloud helllllllllllo Portfolio Backend Running 🚀");
+  res.send("Cloud holaaaaa Portfolio Backend Running 🚀");
 });
 
 app.use("/api/contacts", contactRoutes);
