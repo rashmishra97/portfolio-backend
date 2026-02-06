@@ -2,14 +2,14 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
-import { MongoClient } from "mongodb";
 import cors from "cors";
 
 import contactRoutes from "./routes/contactRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import mongoose from "mongoose"
 
-const  url =  "mongodb+srv://portfolio_user:FFMYVEQ%40123rash@cluster0.udzlnas.mongodb.net/?appName=Cluster0/portfolio"
+// const  url =  "mongodb+srv://portfolio_user:FFMYVEQ%40123rash@cluster0.udzlnas.mongodb.net/?appName=Cluster0/portfolio"
+const url = process.env.MONGO_URI;
 const app = express();
 
 app.use(cors());
@@ -20,7 +20,11 @@ const connectDB = async () => {
   console.log("inside connectdb");
   try {
     console.log("inside try");
-    await mongoose.connect(url);
+    await mongoose.connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+    // await mongoose.connect(url);
     console.log(" MongoDB Database Connected Successfully");
   } catch (error) {
     console.error(" MongoDB Error:", error.message);
